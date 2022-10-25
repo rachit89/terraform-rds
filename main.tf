@@ -5,14 +5,14 @@ provider "aws" {
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
 
-  identifier = "terraform-rds-aarsh"
+  identifier = "terraform-rds-rachit"
 
   engine            = "mysql"
-  engine_version    = "5.7.22"
+  engine_version    = "5.7.38"
   instance_class    = "db.t3.micro"
-  allocated_storage = 5
+  allocated_storage = 20
 
-  db_name  = "wordpress"
+  db_name  = "wordpressrachittf"
   username = "admin"
   password = "password"
   port     = "3306"
@@ -21,7 +21,7 @@ module "db" {
 
   vpc_security_group_ids = ["sg-0451ae4b10404e607"]
   monitoring_interval = "30"
-  monitoring_role_name = "MyRDSMonitoringRole"
+  monitoring_role_name = "RachitRDSMonitoringRole"
   create_monitoring_role = true
 
   tags = {
